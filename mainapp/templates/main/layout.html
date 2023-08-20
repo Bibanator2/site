@@ -1,0 +1,96 @@
+{% load static %}  <!-- Загрузка модуля Django для статических файлов -->
+
+<!doctype html>
+<html lang="ru"> <!-- Начало HTML документа и указание языка контента (русский) -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Кодировка символов для страницы -->
+
+    <!-- Метатег, определяющий параметры отображения на мобильных устройствах -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Совместимость с Internet Explorer -->
+    <title>{% block title %} {% endblock %}</title> <!-- Заголовок страницы, может быть переопределен в дочерних шаблонах -->
+
+    <!-- Подключение стилей Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Подключение главного CSS файла -->
+    <link rel="stylesheet" href={% static "main/css/main.css"%}>
+
+    <!-- Подключение Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+
+<body> <!-- Начало основного контента -->
+
+<!-- Навигационная панель -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-lg-none">
+    <!-- Логотип -->
+    <a class="navbar-brand" href="#">
+        <img src="{% static 'main/img/logo_ann.png' %}" alt="Логотип" width="90" height="60">
+        <span class="minlog"> Biba Site  </span>
+    </a>
+
+    <!-- Кнопка меню для мобильных устройств -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Основное меню сайта -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <!-- Элементы меню -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url  'file' %}"><i class="fas fa-file"></i> Файлы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'news' %}"><i class="fas fa-address-card"></i> Новости</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href={% url 'about' %}><i class="fas fa-paper-plane"></i> Контакты</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Боковая панель, отображаемая только на больших экранах -->
+<aside class="d-none d-lg-block">
+    <img src="{% static 'main/img/logo_ann.png' %}" alt="Логотип">
+    <span class="logo">Biba Site</span>
+    <h3> Навигация </h3>
+    <ul>
+        <!-- Элементы боковой панели -->
+         <a href="{% url 'home' %}"><li><i class="fas fa-home" style="color: #9CCD62"></i> Главная </li></a>
+        <a href="{% url 'file' %}"><li><i class="fas fa-file" style="color: #9CCD62;"></i> Файлы </li></a>
+        <a href="{% url 'news' %}"><li><i class="fas fa-address-card" style="color:#9CCD62 "></i>Новости</li></a>
+        <a href="{% url 'about' %}"><li><i class="fab fa-telegram-plane" style="color: #9CCD62;"></i> Контакты</li></a>
+
+    </ul>
+</aside>
+
+<!-- Главное содержимое сайта -->
+<main>
+    {% block content %}
+        <div class="features">
+        {% for Home in con_home  %}
+            <div class="content-home">
+                <h1> {{ Home.title }} </h1>
+                <p> {{ Home.anons }}</p>
+                <p> {{ Home.full_text }}</p>
+            </div>
+        {% endfor %}
+        </div>
+    {% endblock %}
+</main
+
+<!-- Подключение необходимых JS библиотек для работы Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

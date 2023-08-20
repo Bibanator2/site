@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Контакты {% endblock %}
+
+{% block content %}
+    <div class="features">
+    {% for ArtLine in con_data %}
+    <div class="con_data con_data-warning" >
+        <h1> Контакты </h1>
+        <h3> {{ ArtLine.title }}</h3>
+        <p> {{ ArtLine.anons }}</p>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}

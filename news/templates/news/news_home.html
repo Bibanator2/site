@@ -1,0 +1,33 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Новости {% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1> Новости </h1>
+    {% for el in articles %}
+    <div class="alert alert-warning">
+        <h3>{{ el.title }}</h3>
+        <p>{{ el.anons }}</p>
+        <a href="{% url 'NewsDetail' el.id %}" class="btn btn-warning"> Читать далее </a>
+    </div>
+    {% endfor %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if articles.has_previous %}
+            <a href="?page=1">&laquo; первая</a>
+            <a href="?page={{ articles.previous_page_number }}">предыдущая</a>
+            {% endif %}
+
+            <span class="current">
+                Страница {{ articles.number }} из {{ articles.paginator.num_pages }}.
+            </span>
+
+            {% if articles.has_next %}
+            <a href="?page={{ articles.next_page_number }}"> следущия </a>
+            <a href="?page={{ articles.paginator.num_pages }}"> предыдущая &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{% endblock %}

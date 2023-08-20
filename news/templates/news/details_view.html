@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Новости {% endblock %}
+
+{% block content %}
+    <div class="features">
+       <div class="content-container">
+        <h1> {{ artiles.title }} </h1>
+        <p>{{ artiles.date }}</p>
+        <p>{{ artiles.full_text }}</p>
+        <img  class="article-image"  src="{{ artiles.image.url }}" alt="{{ artiles.title }}">
+    </div>
+    </div>
+{% endblock %}

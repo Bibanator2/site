@@ -1,0 +1,333 @@
+/* Стили для основного фона страницы */
+body {
+    background: #3C3D42; /* Задаем серый цвет фона */
+}
+
+/* Стили для боковой панели (aside) */
+aside {
+    float: left;               /* Выравнивание элемента по левой стороне, чтобы другой контент мог обтекать его справа */
+    background: #181818;      /* Темный фон для боковой панели */
+    width: 20%;               /* Ширина боковой панели равна 20% ширины родителя */
+    padding: 2.5%; /* Отступы со всех сторон панели */
+    height: 168vh;            /* Высота панели равна 100% высоты окна просмотра */
+    color: #9CCD62;           /* Основной 0цвет текста для панели */
+    border-right: 5px solid;  /* Твердая правая граница толщиной 5 пикселей */
+}
+
+/* Стили для изображений внутри боковой панели */
+aside img {
+    width: 220px;   /* Ширина изображения */
+    float: left;    /* Выравнивание изображения по левой стороне */
+}
+
+/* Убираем подчеркивание у ссылок при наведении внутри боковой панели */
+aside a:hover {
+    text-decoration: none;
+}
+
+/* Стили для логотипа внутри боковой панели */
+.logo {
+    font-family: sans-serif;
+    font-size: 25px;          /* Размер шрифта */
+    margin-left: 60px;        /* Отступ слева */
+    font-weight: bold;        /* Жирное начертание текста */
+    position: relative;       /* Относительное позиционирование, чтобы использовать top */
+    top: 20px;                /* Сдвигаем элемент вверх на 10 пикселей */
+}
+
+/* Стили для заголовка h3 внутри боковой панели */
+aside h3 {
+    margin-top: 50px;         /* Отступ сверху */
+    font-size: 25px;          /* Размер шрифта */
+}
+
+/* Убираем маркеры списка у элементов списка внутри боковой панели */
+aside ul {
+    list-style: none;
+}
+
+/* Стили для ссылок внутри списка боковой панели */
+aside ul a {
+    color: #E0DDCA;           /* Цвет текста ссылок */
+    display: block;           /* Заниее кликать */
+    margin-top: 20px;         /* Отступ сверху для каждой ссылки */
+    transition: all .8s ease; /* Плавный переход для всех стилей, продолжительностью 0.8 секунды */
+}
+
+/* Стили при наведении на элементы списка или на весь список */
+aside ul li:hover, aside ul:hover {
+    color: #9CCD62;           /* Изменение цвета текста при наведении */
+    text-decoration: none;    /* Убираем подчеркивание */
+    transform: scale(1.05);   /* Увеличиваем элементы на 5% при наведении */
+}
+.btn-salat {
+    background-color: #9CCD62; /* Салатовый цвет */
+    border-color: #7CC57C;     /* Цвет границы */
+    color: #333;              /* Цвет текста */
+}
+.btn-salat:hover,
+.btn-salat:focus,
+.btn-salat:active {
+    background-color: #3C3D42; /* Немного темнее при наведении или нажатии */
+    border-color: #181818  ;     /* Темнее граница при наведении или нажатии */
+    color: #E0DDCA;               /* Белый цвет текста при наведении или нажатии */
+}
+
+main .features {
+    float:left;
+    color: #E0DDCA;
+    margin-top: 50px;
+    text-align: center;
+    width: 77%;
+}
+
+main .features {
+    float: left;
+    color: #E0DDCA;
+    margin-top: 50px;
+    text-align: center;
+    width: 77%;
+}
+
+main .features h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+main .features p {
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* Медиазапрос для экранов с максимальной шириной в 768px */
+@media (max-width: 768px) {
+    main .features {
+        /* Обнуляем float, чтобы элементы выровнялись вертикально */
+        float: none;
+        /* Если вы хотите, чтобы блок .features занимал всю ширину на мобильных устройствах, установите width в 100% */
+        width: 100%;
+    }
+
+    main .features h1 {
+        /* Уменьшаем размер шрифта для мобильных устройств */
+        font-size: 30px;
+    }
+
+    main .features p {
+        /* Уменьшаем максимальную ширину для мобильных устройств */
+        max-width: 400px;
+    }
+}
+
+/* Оптимизация под смартфоны окна для вывода новостей */
+.alert-warning {
+    word-wrap: break-word;
+    background-color: #9CCD62;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.features {
+    box-sizing: border-box;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px){
+    .alert-warning {
+        text-align: center;
+        width: 100%;
+    }
+
+    .alert-warning h1 {
+        float: left;
+        text-align: center;
+        font-size: 30px;
+        width: 77%;
+    }
+
+    .alert-warning p {
+        float: left;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+        width: 77%;
+    }
+}
+
+.content-container {
+     word-wrap: break-word;
+    max-width: 90%; /* или любое другое значение, которое вам нравится */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 10); /* это добавит небольшую тень вокруг вашего контента для отделения его от фона */
+    background-color: #9CCD62; /* белый фон для контейнера содержимого. Измените это на нужный вам цвет */
+    color: #181818;
+    box-sizing: border-box; /* это учтет внутренние отступы и границы в общем размере блока */
+    border-radius: 10px; /* скругление углов */
+    margin: 0 auto;
+}
+
+/* Основные стили для кнопки-переключателя на панели навигации */
+.navbar-toggler {
+    background-color: #9CCD62; /* Основной фоновый цвет кнопки */
+}
+
+/* Эффект при нажатии (активации) кнопки-переключателя */
+.navbar-toggler:active {
+    background-color: #E0DDCA; /* Фоновый цвет при нажатии */
+    color: #9CCD62; /* Цвет иконки переключателя при нажатии */
+    transition: background-color 0.3s, color 0.3s; /* Плавное изменение фона и цвета иконки */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #E0DDCA;  /* Это цвет текста.*/
+    transition: color 0.6s;  /* Плавный переход цвета */
+}
+
+.navbar-dark .navbar-nav .nav-link:active,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color:#9CCD62;  /* Цвет текста при нажатии и фокусе */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #9CCD62;  /* Цвет текста при наведении */
+}
+
+.navbar-brand .minlog {
+    font-family: sans-serif;
+    color: #9CCD62;
+}
+
+.features .alert-warning {
+    background: #9CCD62;
+    color: #181818;
+}
+
+.features .btn-warning:hover {
+    color: #fff;                /* Белый цвет текста при наведении */
+    background-color: #3C3D42;  /* Немного более темный салатовый цвет */
+}
+
+.features .con_data-warning {
+ background-color: #9CCD62;
+    color: #181818;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+    width: 360px;
+    margin: 20px auto;
+    text-align: center;
+
+}
+
+.features .con_data-warning h3 {
+    text-align: center;
+    max-width: 690px;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px){
+    .con_data-warning {
+        text-align: center;
+        width: 100%;
+    }
+
+    .con_data-warning h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .con_data-warning p {
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+
+.features .content-home {
+    background-color: #9CCD62;
+    color: #181818;
+    max-height: 500px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 10); /* Измененная тень */
+    width: 360px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.features .content-home h1 {
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px){
+    .content-home {
+        text-align: center;
+        width: 100%;
+    }
+
+    .content-home h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .content-home p {
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+
+    }
+}
+
+.article-image {
+    width: 100%;      /* Задаёт ширину изображения равной ширине контейнера */
+    height: auto;     /* Высота будет автоматически адаптирована, чтобы сохранить пропорции изображения */
+    max-width: 650px; /* Максимальная ширина изображения, например, 800 пикселей. Вы можете изменить это значение по своему усмотрению */
+    display: block;   /* Убедитесь, что изображение отображается как блочный элемент */
+    margin: 0 auto;   /* Центрирование изображения по горизонтали, если его реальная ширина меньше максимальной */
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+/* Основной стиль кнопок */
+.pagination a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    margin: 5px;
+    background-color: #9CCD62; /* Примерный зеленый фон */
+    color: #181818;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+
+
+/* Эффект при наведении */
+.pagination a:hover {
+    background-color: #E0DDCA; /* Темнее зеленый */
+}
+
+/* Эффект при нажатии */
+.pagination a:active {
+    background-color: #9CCD62; /* Еще темнее */
+}
+
